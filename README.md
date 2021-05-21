@@ -35,6 +35,12 @@ Now you can run the project with this command
 ```
 python manage.py runserver
 ```
+## Creating superuser
 
+To create a user that can login to the site use the following command:
 
+```
+python manage.py createsuperuser
+```
 
+This login can be used to login to the front end (/) and back end (/admin/) 
