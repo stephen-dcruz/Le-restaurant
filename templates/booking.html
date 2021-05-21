@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<main>
+    <div class="container wow fadeIn">
+        <h2 class="my-5 h2 text-center">Make a booking</h2>
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="card">
+                    <form class="card-body">
+                        {% csrf_token %}
+
+                        <h3>Personal details</h3>
+
+                        <div class='hideable_shipping_form'>
+
+                            <div class="md-form mb-5">
+                                <input type='text' placeholder='John' id='first_name' name='shipping_address'
+                                    class='form-control' />
+                                <label for="shipping_address" class="">First Name</label>
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <input type='text' placeholder='Doe' id='last_name' name='shipping_address'
+                                    class='form-control' />
+                                <label for="shipping_address" class="">Last Name</label>
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <input type='tel' placeholder='020 8371 8543' id='phone' name='shipping_address2'
+                                    class='form-control' />
+                                <label for="shipping_address2" class="">Contact Number</label>
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <input type='date' placeholder='00/00/00' id='date' name='shipping_address2'
+                                    class='form-control' />
+                                <label for="shipping_address2" class="">Date</label>
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <input type='number' placeholder='0' id='guests' name='shipping_address2'
+                                    class='form-control' />
+                                <label for="shipping_address2" class="">Number of people</label>
+                            </div>
+
+                            <button class="btn btn-primary btn-lg btn-block restaurant-blue" type="submit">Send
+                                Booking</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</main>
+
+{% endblock content %}

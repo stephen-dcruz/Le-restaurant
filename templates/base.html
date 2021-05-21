@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% block head_title %}{% endblock %}</title>
+  {% block extra_head %}
+  {% endblock %}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .carousel {
+      height: 60vh;
+      font-family: palatino;
+      min-height: 1000px;
+      width: 100%;
+    }
+
+    .form-spacing {
+      margin-bottom: 10em;
+    }
+
+    .text-box {
+      outline: none;
+    }
+
+    .img-size {
+      height: 255px;
+    }
+
+    .card-spacing {
+      margin-top: 5em;
+    }
+
+    .restaurant-blue {
+      background-color: #2ec4b6;
+    }
+
+    .restaurant-blue-color {
+      background-color: #2ec4b6;
+    }
+
+    .restaurant-orange {
+      background-color: #ff9f1c;
+    }
+
+    .restaurant-black {
+      background-color: #011627;
+    }
+
+    .restaurant-black-color {
+      color: #011627;
+    }
+
+    .link-text {
+      font-weight: 600;
+    }
+
+    .restaurant-red {
+      background-color: #e71d36;
+    }
+
+    .white-text {
+      color: #fdfffc;
+    }
+
+    .three-photos {
+      margin-top: 3em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .three-photos-img {
+      max-width: 100%;
+      height: 400px;
+    }
+
+    @media (max-width: 740px) {
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 100vh;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 100vh;
+      }
+    }
+  </style>
+</head>
+
+{% include "navbar.html" %}
+
+<body>
+
+  <div class="mt-5 pt-4">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+
+  {% block content %}
+  {% endblock content %}
+
+  {% block extra_body %}
+  {% endblock %}
+
+  {% include "footer.html" %}
+  {% include "scripts.html" %}
+
+  {% block extra_scripts %}
+  {% endblock extra_scripts %}
+</body>
+
+</html>
